@@ -396,9 +396,9 @@ async function createDefaultTodos(page) {
  * @param {import('@playwright/test').Page} page
  * @param {number} expected
  */
- async function checkNumberOfCompletedTodosInLocalStorage(page, expected, varLocalStorage) {
+ async function checkNumberOfCompletedTodosInLocalStorage(page, expected) {
   return await page.waitForFunction(e => {
-    return JSON.parse(localStorage[varLocalStorage]).filter(i => i.completed).length === e;
+    return JSON.parse(localStorage['react-todos']).filter(i => i.completed).length === e;
   }, expected);
 }
 
